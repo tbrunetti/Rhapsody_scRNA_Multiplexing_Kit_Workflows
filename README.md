@@ -35,8 +35,19 @@ git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows
 
 </br>  
 
+## STEP3: Setup and run `velocyto` using the custom run commands  
+**for libraries where cDNA is generated and mixed in the same library as sample tag**  
 
-## STEP3: Downstream analysis in `Seurat` using `velocyto` for RNA velocity  
+### Software Dependencies  
+* python >v3.6, I use python v3.9  
+* velocyto with dependencies installed  
+
+ 
+
+</br>
+
+
+## STEP4: Downstream analysis in `Seurat` using `velocyto` for RNA velocity  
 
 ### Software Dependencies  
 * Seurat  
