@@ -24,6 +24,11 @@ git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows
 * python v2.7 due to Rhapsody issues with python v3 with `cwl-runner` installed 
 * STAR aligner matching Rhapsody Docker version (v1.10 is STAR v2.5.2b)  
 
+### Input of STEP1  
+
+### Output of STEP1  
+ 
+
 </br>  
 
 ## STEP2: Demultiplex Combined Alignment and Modification for `velocyto` compatibility
@@ -32,6 +37,14 @@ git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows
 ### Software Dependencies  
 * bash version >=4.0  
 * samtools  
+
+### Input of STEP2  
+* combined bam file output in STEP1  
+
+### Output of STEP2  
+* .bam alignment file ready for use in velocyto (1 per sample demuxed)  
+* .bai index file, in case needed later for softwares such as IGV (1 per sample demuxed)  
+
 
 </br>  
 
@@ -42,6 +55,13 @@ git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows
 * python >v3.6, I use python v3.9  
 * velocyto with dependencies installed  
 
+### Input of STEP3  
+* .bam file(s) produced in STEP2 
+
+### Output of STEP3  
+* .loom file (1 per bam)  
+* .log file (1 per bam)  
+* .err file (1 per bam)  
  
 
 </br>
@@ -53,6 +73,11 @@ git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows
 * Seurat  
 * SeuratWrappers  
 * velocyto.R  
+
+### Input of STEP4:  
+* .loom file from STEP3  
+
+
 
 
 </br>  
