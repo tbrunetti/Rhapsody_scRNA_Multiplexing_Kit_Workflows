@@ -109,6 +109,8 @@ pip install cwlref-runner
 * .loom file from STEP3  
 
 
+**The loom file can be transformed into a Seurat object; for velocyto make sure to use the `spliced` assay.**   
+For a full tutorial please visit: [Seurat's velocyto tutorial](https://github.com/satijalab/seurat-wrappers/blob/master/docs/velocity.md)  
 
 
 </br>  
