@@ -5,6 +5,10 @@ First, clone this repository to get some of the bash scripts and other custom sc
 ```
 git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows.git   
 ```
+Then download the version of BDsciences Rhapsody config files  you want to use.  This github page assumes you are using v1.10:   
+1.  Go to https://bitbucket.org/CRSwDev/cwl/src/master/  
+2.  Download the repository by selecting the dowload button on the left side panel.  
+3.  This will download all the configuration files you need for Docker.  You will see `.cwl` and `.yml` files. For our purpose, we will be using `v1.10`  
 
 </br>
 
@@ -48,7 +52,7 @@ If it is successfully activated you should see the name of the environment in pa
 3. Since the Docker image uses a .yml and .cwl config files, you need to install `cwl-runner` in python while ensuring the conda environment is active:  
 ```
 pip install cwltool  
-pip install cwl-runner  
+pip install cwlref-runner  
 ```   
 
 ### Input of STEP1  
