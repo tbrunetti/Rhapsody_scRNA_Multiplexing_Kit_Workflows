@@ -5,7 +5,7 @@ First, clone this repository to get some of the bash scripts and other custom sc
 ```
 git clone https://github.com/tbrunetti/Rhapsody_scRNA_Multiplexing_Kit_Workflows.git   
 ```
-Then download the version of BDsciences Rhapsody config files  you want to use.  This github page assumes you are using v1.10:   
+Then download the version of [BDsciences Rhapsody config files](https://bitbucket.org/CRSwDev/cwl/src/master/) you want to use.  This github page assumes you are using v1.10:   
 1.  Go to https://bitbucket.org/CRSwDev/cwl/src/master/  
 2.  Download the repository by selecting the dowload button on the left side panel.  
 3.  This will download all the configuration files you need for Docker.  You will see `.cwl` and `.yml` files. For our purpose, we will be using `v1.10`  
@@ -32,8 +32,14 @@ Then download the version of BDsciences Rhapsody config files  you want to use. 
 ### Setting up Environment  
 Once Docker is installed, pull the latest docker image from the Rhapsody repo (you may need `sudo` permissions to pull the image if you are not on your own personal computer):  
 ```  
-docker pull bdgenomics/rhapsody  
+docker pull bdgenomics/rhapsody:[tag_matching_config_version]  
 ```  
+
+> **Note**
+> If you need to use this on a cluster or a system that requires Singularity, instead of running the above, run the following:  
+singularity pull bdgenomics_rhapsody_2.0.sif docker://bdgenomics/rhapsody:[tag_matching_config_version]  
+
+  
 
 You will also need `python v2.7` installed since BD genomics has not yet updated their Docker image to be compatible with `python v3`.  **Warning!** python v2.7 is deprecated -- **I would strongly recommend building this locally or using `conda` or `virutalenv` to keep this build separate from the current python versions.**  
 To build python 2.7 within a `conda` environment ready for use with Rhapsody Docker images:  
@@ -54,6 +60,10 @@ If it is successfully activated you should see the name of the environment in pa
 pip install cwltool  
 pip install cwlref-runner  
 ```   
+
+> **Note**  
+> At least when tested for `v2.0`, python3 is now functional, therefore, a conda senvironment with the same packages listed above but for python3, should work.  
+
 
 ### Input of STEP1  
 
