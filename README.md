@@ -37,9 +37,8 @@ docker pull bdgenomics/rhapsody:[tag_matching_config_version]
 
 > **Note**
 > If you need to use this on a cluster or a system that requires Singularity, instead of running the above, run the following:  
-singularity pull bdgenomics_rhapsody_2.0.sif docker://bdgenomics/rhapsody:[tag_matching_config_version]  
+`singularity pull bdgenomics_rhapsody_2.0.sif docker://bdgenomics/rhapsody:[tag_matching_config_version]`    
 
-  
 
 You will also need `python v2.7` installed since BD genomics has not yet updated their Docker image to be compatible with `python v3`.  **Warning!** python v2.7 is deprecated -- **I would strongly recommend building this locally or using `conda` or `virutalenv` to keep this build separate from the current python versions.**  
 To build python 2.7 within a `conda` environment ready for use with Rhapsody Docker images:  
